@@ -1,3 +1,6 @@
 data/
 *.csv
 notebooks/
+
+models/
+*.pkl
