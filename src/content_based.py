@@ -1,8 +1,8 @@
 import pandas as pd
+import numpy as np
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
 
 
 def clean_name(name):
@@ -16,9 +16,8 @@ def clean_list(items):
     ]
 
 
-
-
 def create_soup(row):
+
     return " ".join(
         row["genres"]
         + row["keywords"]
@@ -41,7 +40,6 @@ def build_count_matrix(movies_df):
     return count_matrix
 
 
-
 def create_indices(movies_df):
 
     indices = pd.Series(
@@ -50,7 +48,6 @@ def create_indices(movies_df):
     )
 
     return indices
-
 
 
 def recommend(
@@ -67,6 +64,7 @@ def recommend(
         )
 
     idx = indices[title]
+
     movie_vector = count_matrix[idx]
 
     sim_scores = cosine_similarity(
@@ -74,20 +72,14 @@ def recommend(
         count_matrix
     ).flatten()
 
-    sim_scores = list(
-        enumerate(sim_scores)
-    )
+    movie_indices = np.argsort(
+        sim_scores
+    )[::-1]
 
-    sim_scores = sorted(
-        sim_scores,
-        key=lambda x: x[1],
-        reverse=True
-    )
-    sim_scores = sim_scores[1: top_n + 1]
-    movie_indices = [
-        i[0]
-        for i in sim_scores
+    movie_indices = movie_indices[
+        1:top_n+1
     ]
+
     return movies_df.iloc[movie_indices][
         [
             "title",

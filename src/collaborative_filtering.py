@@ -56,10 +56,10 @@ class MatrixFactorization:
 
     def __init__(
         self,
-        n_factors=20,
+        n_factors=40,
         learning_rate=0.01,
         reg=0.005,
-        epochs=20
+        epochs=50
     ):
         self.n_factors = n_factors
         self.learning_rate = learning_rate
