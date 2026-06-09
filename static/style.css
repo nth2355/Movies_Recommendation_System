@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+.container {
+  width: 70%;
+  margin: 60px auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub {
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+#suggestBox {
+  position: absolute;
+  width: 100%;
+  background: #1e293b;
+  border-radius: 10px;
+  margin-top: 5px;
+  text-align: left;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggest-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggest-item:hover {
+  background: #334155;
+}
+
+#result {
+  margin-top: 30px;
+}
+
+.movie-card {
+  background: #1e293b;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  text-align: left;
+}

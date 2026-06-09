@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tìm phim tương tự</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>🎬 Tìm phim có nội dung bạn muốn xem</h1>
+
+      <p class="sub">
+        Gõ tên một bộ phim — hệ thống sẽ gợi ý những phim “cùng vibe”
+      </p>
+
+      <div class="search-box">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Nhập tên phim bạn muốn để tìm nội dung tương tự..."
+        />
+
+        <div id="suggestBox"></div>
+      </div>
+
+      <div id="result"></div>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
